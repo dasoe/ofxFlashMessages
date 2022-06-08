@@ -25,6 +25,8 @@ public:
 
     void update();
     void draw();
+    void draw(int _width);
+    
     unsigned long flashMessageTimer, actualTime;
     vector <flashMessage*> messages;
 };

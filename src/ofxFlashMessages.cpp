@@ -49,9 +49,13 @@ void ofxFlashMessages::update() {
 		//messages.end());
 
 }
-
 //--------------------------------------------------------------
 void ofxFlashMessages::draw() {
+    draw(ofGetWidth());
+}
+
+//--------------------------------------------------------------
+void ofxFlashMessages::draw(int _width) {
 
 
 		for (auto i = 0; i < messages.size(); i++) {
@@ -80,7 +84,7 @@ void ofxFlashMessages::draw() {
 				break;
 			}
 
-			ofDrawRectangle(10, 10 + (i * 30), ofGetWidth() - 20, 20);
+			ofDrawRectangle(10, 10 + (i * 30), _width - 20, 20);
 			switch (messages.at(i)->logLevel) {
 			case OF_LOG_VERBOSE:
 				ofSetColor(255, 255, 255, messages.at(i)->alpha);
